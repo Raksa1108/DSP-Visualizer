@@ -19,56 +19,32 @@ st.set_page_config(
 )
 
 # Import page modules
-from idk import home, fft_analysis, filtering, convolution, modulation, spectral_analysis
+from idk import home, dft, fft_analysis, filtering, convolution, modulation, spectral_analysis, transforms
 
 # Custom CSS for better styling
 st.markdown("""
-<style>
-    .main-header {
-        font-size: 3rem;
-        font-weight: bold;
-        text-align: center;
-        color: #2E86AB;
-        margin-bottom: 2rem;
-    }
-    .sub-header {
-        font-size: 1.5rem;
-        color: #A23B72;
-        margin-bottom: 1rem;
-    }
-    .info-box {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-left: 4px solid #2E86AB;
-        margin: 1rem 0;
-    }
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 2px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-</style>
+
 """, unsafe_allow_html=True)
 
 def main():
     # Main title
-    st.markdown('<h1 class="main-header">🎵 Digital Signal Processing Visualizer</h1>', unsafe_allow_html=True)
+    st.markdown('🎵 Digital Signal Processing Visualizer', unsafe_allow_html=True)
     
     # Sidebar navigation
     page = st.sidebar.selectbox(
         "Select Page",
-        ["Home", "FFT Analysis", "Filtering", "Convolution", "Modulation", "Spectral Analysis"]
+        ["Home", "DFT Analysis", "FFT Analysis","Transforms", "Filtering", "Convolution", "Modulation", "Spectral Analysis"]
     )
     
     # Display selected page
     if page == "Home":
         home.show()
+    elif page == "DFT Analysis":
+        dft.show()
     elif page == "FFT Analysis":
         fft_analysis.show()
+    elif page == "Transforms":
+        transforms.show()
     elif page == "Filtering":
         filtering.show()
     elif page == "Convolution":
