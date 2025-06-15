@@ -269,13 +269,18 @@ def show():
             bandwidth = w[half_power_indices[-1]] - w[half_power_indices[0]]
             st.write(f"**-3dB Bandwidth:** {bandwidth:.2f} Hz")
         
-        # Group delay (approximate)
-        _, gd = scipy.signal.group_delay((sos), w=w, fs=fs)
-        avg_group_delay = np.mean(gd[~np.isnan(gd)])
-        st.write(f"**Avg Group Delay:** {avg_group_delay:.4f} s")
+        # Convert SOS to transfer function coefficients for group delay
+        try:
+            b, a = scipy.signal.sos2tf(sos)
+            _, gd = scipy.signal.group_delay((b, a), w=w, fs=fs)
+            avg_group_delay = np.mean(gd[~np.isnan(gd)])
+            st.write(f"**Avg Group Delay:** {avg_group_delay:.4f} s")
+        except Exception as e:
+            st.warning(f"Group delay calculation failed: {e}")
+            avg_group_delay = None
         
         # Filter stability (check poles)
-        st.write(f"**Filter Stable:** {'Yes' if np.all(np.abs(np.roots(np.poly(sos.flatten()))) < 1) else 'No'}")
+        st.write(f"**Filter Stable:** {'Yes' if np.all(np.abs(np.roots(a)) < 1) else 'No'}")
     
     # Real-time filter parameters adjustment
     st.markdown("### Real-time Parameter Adjustment")
