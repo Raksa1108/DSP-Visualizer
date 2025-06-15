@@ -51,7 +51,7 @@ def show():
     st.markdown('<h2 class="sub-header">DFT Analysis</h2>', unsafe_allow_html=True)
     
     # Create tabs for SFT and IDFT
-    tab1, tab2 = st.tabs(["SFT (Sum of Frequencies Transform)", "IDFT (Inverse DFT)"])
+    tab1, tab2 = st.tabs(["DFT", "IDFT (Inverse DFT)"])
     
     with tab1:
         st.markdown("### Discrete Fourier Transform (DFT)")
