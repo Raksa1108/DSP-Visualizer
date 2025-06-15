@@ -1,5 +1,5 @@
-streamlit==1.35.0
-numpy==1.26.4
-plotly==5.22.0
-scipy==1.13.1
-soundfile==0.12.1
+streamlit
+numpy
+plotly
+scipy
+soundfile
