@@ -257,7 +257,7 @@ def show():
             fig = make_subplots(
                 rows=3, cols=1,
                 subplot_titles=('Time Domain Signal', 'Windowed Signal', 'Power Spectral Density'),
-                vertical_spacing=0.08
+                vertical_spacing=0.15  # Increased spacing to avoid overlap
             )
             
             # Time domain signal
@@ -292,7 +292,7 @@ def show():
             
             # Update layout
             fig.update_layout(
-                height=800,
+                height=1000,  # Increased height to separate plots
                 title_text=f"Spectral Analysis - {analysis_type}",
                 showlegend=True,
                 template="plotly_white"
@@ -386,7 +386,7 @@ def show():
             title=f"{window_type} Window Function",
             xaxis_title="Sample",
             yaxis_title="Amplitude",
-            height=300,
+            height=350,  # Slightly increased to avoid overlap
             template="plotly_white"
         )
         
@@ -420,13 +420,14 @@ def show():
                 
                 fig_harm.add_trace(
                     go.Bar(x=harmonics, y=10 * np.log10(np.array(harmonic_powers) + 1e-10),
-                          name='Harmonics', marker_color='red')
+                           name='Harmonics', marker_color='red')
                 )
                 
                 fig_harm.update_layout(
                     title="Harmonic Content",
                     xaxis_title="Frequency (Hz)",
                     yaxis_title="Power (dB)",
+                    height=350,
                     template="plotly_white"
                 )
                 
@@ -493,6 +494,7 @@ def show():
                 title="Spectral Estimation Methods Comparison",
                 xaxis_title="Frequency (Hz)",
                 yaxis_title="Power (dB)",
+                height=350,
                 template="plotly_white"
             )
             
