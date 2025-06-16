@@ -78,11 +78,11 @@ def show():
             dft_result = dft(signal)
             freqs = np.fft.fftfreq(len(signal), 1/sample_rate)
             
-            # Create subplots
+            # Create subplots with more vertical spacing to avoid overlap
             fig = make_subplots(
                 rows=2, cols=1,
                 subplot_titles=("Input Signal", "DFT Magnitude Spectrum"),
-                vertical_spacing=0.08
+                vertical_spacing=0.2  # Increased spacing to prevent overlap
             )
             
             # Plot input signal
@@ -99,7 +99,7 @@ def show():
             )
             
             fig.update_layout(
-                height=600,
+                height=700,  # Increased height to ensure no overlap
                 title_text="DFT Analysis",
                 showlegend=True,
                 template="plotly_white"
@@ -222,11 +222,11 @@ def show():
             idft_result = idft(freq_signal)
             t = np.linspace(0, samples / sample_rate, samples, endpoint=False)
             
-            # Create subplots
+            # Create subplots with more vertical spacing to avoid overlap
             fig = make_subplots(
                 rows=2, cols=1,
                 subplot_titles=("Input Frequency Spectrum (Magnitude)", "IDFT Result (Real Part)"),
-                vertical_spacing=0.08
+                vertical_spacing=0.2  # Increased spacing to prevent overlap
             )
             
             # Plot frequency domain
@@ -243,7 +243,7 @@ def show():
             )
             
             fig.update_layout(
-                height=600,
+                height=700,  # Increased height to ensure no overlap
                 title_text="IDFT Analysis",
                 showlegend=True,
                 template="plotly_white"
