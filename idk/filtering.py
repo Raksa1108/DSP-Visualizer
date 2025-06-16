@@ -156,7 +156,7 @@ def show():
                        'Filter Frequency Response', 'Filter Phase Response',
                        'FFT: Original vs Filtered', 'Time Domain Comparison'],
         specs=[[{}, {}], [{}, {}], [{}, {}]],
-        vertical_spacing=0.08
+        vertical_spacing=0.18  # Increased spacing to prevent overlap
     )
     
     # Time domain signals
@@ -227,7 +227,7 @@ def show():
     fig.update_yaxes(title_text="Magnitude (dB)", row=3, col=1)
     fig.update_yaxes(title_text="Amplitude", row=3, col=2)
     
-    fig.update_layout(height=1000, showlegend=False)
+    fig.update_layout(height=1200, showlegend=False)  # Increased height
     st.plotly_chart(fig, use_container_width=True)
     
     # Filter Analysis
