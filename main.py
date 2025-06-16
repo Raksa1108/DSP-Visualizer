@@ -58,15 +58,11 @@ st.markdown("""
     
     /* Title styling */
     .main-title {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #2c3e50;
         font-size: 3.5rem;
         font-weight: 700;
         text-align: center;
         margin-bottom: 2rem;
-        text-shadow: 0 4px 8px rgba(79, 172, 254, 0.2);
         font-family: 'Inter', sans-serif;
     }
     
@@ -162,26 +158,30 @@ st.markdown("""
         border-top: none;
     }
     
-    /* Tab styling */
+    /* Tab styling - Minimal */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-        background: linear-gradient(135deg, #e8f4f8 0%, #d4edda 100%);
-        border-radius: 15px;
-        padding: 8px;
+        gap: 2px;
+        background: transparent;
+        border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+        border-radius: 0;
+        padding: 0;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background: rgba(255, 255, 255, 0.7);
-        border-radius: 10px;
+        background: transparent;
+        border-radius: 0;
         color: #2c5282;
         font-weight: 500;
-        border: 1px solid rgba(79, 172, 254, 0.2);
+        border: none;
+        border-bottom: 2px solid transparent;
+        padding: 12px 20px;
     }
     
     .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        color: white;
-        border-color: transparent;
+        background: transparent;
+        color: #2c5282;
+        border-bottom: 2px solid #4facfe;
+        font-weight: 600;
     }
     
     /* Info boxes */
