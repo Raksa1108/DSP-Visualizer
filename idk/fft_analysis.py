@@ -156,7 +156,7 @@ def show():
                        'FFT Magnitude', 'FFT Phase',
                        'Magnitude Spectrum (Zoomed)', 'Phase Spectrum (Zoomed)'],
         specs=[[{}, {}], [{}, {}], [{}, {}]],
-        vertical_spacing=0.08
+        vertical_spacing=0.2 # INCREASED vertical spacing to avoid overlap
     )
     
     # Original signal
@@ -218,7 +218,12 @@ def show():
     fig.update_yaxes(title_text=magnitude_label, row=3, col=1)
     fig.update_yaxes(title_text="Phase (rad)", row=3, col=2)
     
-    fig.update_layout(height=1000, showlegend=False)
+    # Increased figure height and margins to ensure clarity and no overlap
+    fig.update_layout(
+        height=1400, # INCREASED height
+        showlegend=False,
+        margin=dict(t=120, b=60, l=60, r=60) # Added margins for extra clarity
+    )
     st.plotly_chart(fig, use_container_width=True)
     
     # Peak detection and analysis
