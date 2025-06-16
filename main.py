@@ -335,10 +335,9 @@ def main():
     
     # Add some visual separation
     st.sidebar.markdown("---")
-    st.sidebar.markdown("*Clean & Minimal Signal Processing*")
     
     # Display selected page
-    page_key = page.split(" ", 1)[1]  # Remove emoji for function calls
+    page_key = page.split(" ", 1)[1] 
     
     if page_key == "Home":
         home.show()
@@ -357,12 +356,7 @@ def main():
     elif page_key == "Spectral Analysis":
         spectral_analysis.show()
     
-    # Clean footer
-    st.markdown("""
-    <div class="footer">
-        ⚡ Digital Signal Processing Visualizer • Built with Streamlit
-    </div>
-    """, unsafe_allow_html=True)
+
 
 if __name__ == "__main__":
     main()
