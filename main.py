@@ -13,7 +13,7 @@ import base64
 # Configure page
 st.set_page_config(
     page_title="DSP Visualizer",
-    page_icon="🌊",
+    page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -70,76 +70,72 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
     }
     
-    /* Selectbox styling */
+    /* Selectbox styling - Minimal */
     .stSelectbox > div > div > div {
-        background: linear-gradient(135deg, #e8f4f8 0%, #d4edda 100%);
-        border: 2px solid rgba(79, 172, 254, 0.2);
-        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(79, 172, 254, 0.2);
+        border-radius: 8px;
         color: #2c5282;
-        font-weight: 500;
+        font-weight: 400;
     }
     
     .stSelectbox > div > div > div:hover {
-        border-color: #4facfe;
-        box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
+        border-color: rgba(79, 172, 254, 0.4);
     }
     
-    /* Button styling */
+    /* Button styling - Minimal */
     .stButton > button {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 12px 24px;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-        transition: all 0.3s ease;
+        background: rgba(79, 172, 254, 0.1);
+        color: #2c5282;
+        border: 1px solid rgba(79, 172, 254, 0.3);
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        transition: all 0.2s ease;
         font-family: 'Inter', sans-serif;
     }
     
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
-        background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+        background: rgba(79, 172, 254, 0.15);
+        border-color: rgba(79, 172, 254, 0.5);
     }
     
-    /* Slider styling */
+    /* Slider styling - Minimal */
     .stSlider > div > div > div {
-        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        background: rgba(79, 172, 254, 0.3);
     }
     
     .stSlider > div > div > div > div {
         background: #4facfe;
-        border: 3px solid white;
-        box-shadow: 0 2px 8px rgba(79, 172, 254, 0.3);
+        border: 2px solid white;
     }
     
-    /* Number input styling */
+    /* Number input styling - Minimal */
     .stNumberInput > div > div > input {
-        background: rgba(232, 244, 248, 0.5);
-        border: 2px solid rgba(79, 172, 254, 0.2);
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(79, 172, 254, 0.2);
+        border-radius: 6px;
         color: #2c5282;
-        font-weight: 500;
+        font-weight: 400;
     }
     
     .stNumberInput > div > div > input:focus {
         border-color: #4facfe;
-        box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        outline: none;
     }
     
-    /* Text input styling */
+    /* Text input styling - Minimal */
     .stTextInput > div > div > input {
-        background: rgba(232, 244, 248, 0.5);
-        border: 2px solid rgba(79, 172, 254, 0.2);
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(79, 172, 254, 0.2);
+        border-radius: 6px;
         color: #2c5282;
-        font-weight: 500;
+        font-weight: 400;
     }
     
     .stTextInput > div > div > input:focus {
         border-color: #4facfe;
-        box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        outline: none;
     }
     
     /* Metrics styling */
@@ -327,19 +323,19 @@ st.markdown("""
 
 def main():
     # Beautiful animated title
-    st.markdown('<h1 class="main-title">🌊 Digital Signal Processing Visualizer</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-title">⚡ Digital Signal Processing Visualizer</h1>', unsafe_allow_html=True)
     
-    # Sidebar navigation with ocean theme
-    st.sidebar.markdown("### 🧭 Navigation")
+    # Sidebar navigation with electronics theme
+    st.sidebar.markdown("### 🔧 Navigation")
     page = st.sidebar.selectbox(
         "Select Page",
-        ["🏠 Home", "📊 DFT Analysis", "⚡ FFT Analysis", "🔄 Transforms", "🔍 Filtering", "🌊 Convolution", "📡 Modulation", "📈 Spectral Analysis"],
+        ["🏠 Home", "📊 DFT Analysis", "⚡ FFT Analysis", "🔄 Transforms", "🔍 Filtering", "📈 Convolution", "📡 Modulation", "📊 Spectral Analysis"],
         format_func=lambda x: x
     )
     
     # Add some visual separation
     st.sidebar.markdown("---")
-    st.sidebar.markdown("*Explore the depths of signal processing*")
+    st.sidebar.markdown("*Clean & Minimal Signal Processing*")
     
     # Display selected page
     page_key = page.split(" ", 1)[1]  # Remove emoji for function calls
@@ -361,10 +357,10 @@ def main():
     elif page_key == "Spectral Analysis":
         spectral_analysis.show()
     
-    # Beautiful footer
+    # Clean footer
     st.markdown("""
     <div class="footer">
-        🌊 Made with love for Digital Signal Processing • Powered by Streamlit
+        ⚡ Digital Signal Processing Visualizer • Built with Streamlit
     </div>
     """, unsafe_allow_html=True)
 
