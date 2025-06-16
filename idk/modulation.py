@@ -87,12 +87,12 @@ def show():
             window_size = max(1, int(sample_rate / (10 * carrier_freq)))
             demod_signal = np.convolve(demod_signal, np.ones(window_size)/window_size, mode='same')
         
-        # Create subplots
+        # Create subplots with increased spacing and margin to avoid overlap
         fig = make_subplots(
             rows=4, cols=1,
             subplot_titles=('Message Signal', 'Carrier Signal', 
                             'Modulated Signal', 'Demodulated Signal'),
-            vertical_spacing=0.08
+            vertical_spacing=0.13  # Increased spacing
         )
         
         # Plot message signal
@@ -133,7 +133,8 @@ def show():
         
         # Update layout
         fig.update_layout(
-            height=800,
+            height=900,  # Slightly increased
+            margin=dict(l=50, r=50, t=80, b=50),  # More margin
             title_text=f"{modulation_type} - Signal Analysis",
             showlegend=True,
             template="plotly_white"
@@ -163,7 +164,8 @@ def show():
         # Plot frequency spectra
         fig_freq = make_subplots(
             rows=2, cols=1,
-            subplot_titles=('Message Signal Spectrum', 'Modulated Signal Spectrum')
+            subplot_titles=('Message Signal Spectrum', 'Modulated Signal Spectrum'),
+            vertical_spacing=0.18  # increased for freq domain as well
         )
         
         # Message spectrum
@@ -183,7 +185,8 @@ def show():
         )
         
         fig_freq.update_layout(
-            height=500,
+            height=550,
+            margin=dict(l=50, r=50, t=50, b=50),
             title_text="Frequency Spectra Comparison",
             template="plotly_white"
         )
