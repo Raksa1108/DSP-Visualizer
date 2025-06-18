@@ -18,12 +18,11 @@ This web app allows users to intuitively understand and visualize core DSP conce
 - Frequency Modulation (FM)
 
 🔹 **Convolution**
-- Linear Convolution  
-- Circular Convolution  
+- Linear Convolution    
 - Visual walkthrough of the convolution process
 
 🔹 **Filtering**
-- Low Pass, High Pass, Band Pass, and Notch Filters  
+- Low Pass, High Pass, Band Pass, and Band stop filters
 - Time and frequency domain visualization of filtered signals
 
 🔹 **Spectral Analysis**
