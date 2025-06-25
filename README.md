@@ -40,5 +40,5 @@ This web app allows users to intuitively understand and visualize core DSP conce
 
 ## 👩‍💻 Author
 
-Made with Streamlit an Python by [Rakshaa](https://github.com/Raksa1108)  
+Made with Python by [Rakshaa](https://github.com/Raksa1108)  
 Feel free to star 🌟 the repo if you find it useful!
